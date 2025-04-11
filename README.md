@@ -13,4 +13,3 @@ A Python-based project to analyze trends in agricultural commodities using data 
 - Jupyter Notebook
 ---
 
-✨ Clean visuals. 📈 Real insights.

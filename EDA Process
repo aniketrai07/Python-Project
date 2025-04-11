@@ -1,0 +1,35 @@
+import pandas as pd
+df = pd.read_csv("C:/Users/anike/Downloads/INT375.csv")
+df.columns = df.columns.str.replace("_x0020_", "_")
+df['Arrival_Date'] = pd.to_datetime(df['Arrival_Date'], dayfirst=True)
+print(df.info())
+print(df.describe())
+
+
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 1944 entries, 0 to 1943
+Data columns (total 10 columns):
+ #   Column        Non-Null Count  Dtype         
+---  ------        --------------  -----         
+ 0   State         1944 non-null   object        
+ 1   District      1944 non-null   object        
+ 2   Market        1944 non-null   object        
+ 3   Commodity     1944 non-null   object        
+ 4   Variety       1944 non-null   object        
+ 5   Grade         1944 non-null   object        
+ 6   Arrival_Date  1944 non-null   datetime64[ns]
+ 7   Min_Price     1944 non-null   int64         
+ 8   Max_Price     1944 non-null   int64         
+ 9   Modal_Price   1944 non-null   int64         
+dtypes: datetime64[ns](1), int64(3), object(6)
+memory usage: 152.0+ KB
+None
+              Arrival_Date      Min_Price      Max_Price    Modal_Price
+count                 1944    1944.000000    1944.000000    1944.000000
+mean   2025-04-02 00:00:00    3856.166667    4497.363169    4199.249486
+min    2025-04-02 00:00:00       0.000000       0.000000       3.000000
+25%    2025-04-02 00:00:00    1100.000000    1500.000000    1400.000000
+50%    2025-04-02 00:00:00    2300.000000    2669.000000    2500.000000
+75%    2025-04-02 00:00:00    4000.000000    5000.000000    4500.000000
+max    2025-04-02 00:00:00  162500.000000  162580.000000  162540.000000
+std                    NaN    7695.687973    7855.489397    7755.975398
